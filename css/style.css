@@ -50,6 +50,26 @@ header .head {
     font-weight: 400;
 }
 
+
+.icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--light-tc);
+    padding: 8px;
+    border-radius: 6px;
+    transition: .3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon:hover {
+    background: var(--hover-c);
+    color: var(--dark-tc);
+}
+
 /* End Components */
 
 /* Start Header */
@@ -64,25 +84,6 @@ header nav {
     justify-content: space-between;
     text-align: center;
     padding: 12px 0;
-}
-
-header i:not(.search-container i) {
-    font-size: 20px;
-    cursor: pointer;
-    color: var(--light-tc);
-    padding: 8px;
-    border-radius: 6px;
-    transition: .3s ease;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header i:hover:not(.search-container i) {
-    background: var(--hover-c);
-    color: var(--dark-tc);
 }
 
 header nav > div {
@@ -138,16 +139,71 @@ header #notfications-menu {
     position: absolute;
     top: 60px;
     right: 50px;
+    width: 350px;
+    border: 1px solid var(--border-c);
+    border-radius: 8px;
+}
+
+#notfications-menu .head span {
+    font-size: 16px;
+    color: var(--light-tc);
+    cursor: pointer;
+}
+
+.notice {
+    display: flex;
+    gap: 5px;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-c);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.notice:hover {
+    background: var(--hover-c);
+}
+
+.notice img {
+    width: 44px !important;
+    margin: 0;
+}
+
+.notice .text {
+    font-size: 14px;
+    color: var(--light-tc);
+}
+
+.notice .text span,
+.notice .text p {
+    display: inline;
+}
+
+.notice .name {
+    color: var(--dark-tc);
+    font-weight: 500;
+}
+
+.notice .time {
+    display: block !important;
+    text-align: left;
+    color: var(--green);
+    font-weight: 500;
+    margin-top: 10px;
 }
 
 header nav .choose {
     display: flex;
     flex-wrap: wrap;
-    width: 19px;
+    width: 40px;
+    height: 40px;
     gap: 1px;
     justify-content: center;
     align-content: center;
     cursor: pointer;
+    padding: 8px;
+    transition: .3s ease;
+    border-radius: 6px;
 }
 
 header nav .choose span {
@@ -157,10 +213,15 @@ header nav .choose span {
     background: var(--light-tc);
     border-radius: 3px;
     transition: .3s ease;
+
 }
 
 header nav .choose:hover > span {
     background: var(--dark-tc);
+}
+
+header nav .choose:hover {
+    background: var(--hover-c);
 }
 
 header #apps-menu {
@@ -228,7 +289,7 @@ header .profile ul {
     width: 160px;
 }
 
-header .profile ul .user-email {
+header .profile ul .user-details {
     padding: 12px 16px;
     display: flex;
     flex-direction: column;
@@ -239,6 +300,11 @@ header .profile ul .user-email {
 
 header .profile h5 {
     font-size: 16px;
+}
+
+header .user-details span {
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 header .profile ul li {
