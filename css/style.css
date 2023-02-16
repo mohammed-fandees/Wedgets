@@ -79,6 +79,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
 }
 
 header nav {
@@ -330,3 +331,54 @@ header nav img {
 }
 
 /* End Header */
+/* Start Asid */
+
+aside {
+    width: 250px;
+    border-right: 1px solid var(--border-c);
+    height: calc(100vh - 70px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 15px 10px !important;
+}
+
+aside ul li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+aside ul li:hover {
+    background: var(--hover-c);
+}
+
+aside .notices-number {
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 50px;
+    background: #fde8e8;
+    color: #9b1c1c;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    justify-self: flex-end;
+    position: absolute;
+    right: 20px;
+}
+
+aside svg {
+    width: 25px;
+    transition: .3s ease;
+    color: var(--light-tc);
+}
+
+aside ul li:hover > svg {
+    color: var(--dark-tc);
+}
+
+/* End Asid */
