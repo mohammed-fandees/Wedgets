@@ -31,9 +31,21 @@ let navbar = new Navbar(
 );
 
 document.querySelector('#notfications').addEventListener('click', _ => navbar.notifcationEvent());
-document.querySelector('.choose').addEventListener('click', _ => navbar.appsEvent());
+document.querySelector('#apps-icon').addEventListener('click', _ => navbar.appsEvent());
 
 document.querySelector('#userPhoto').addEventListener('click', function() {
     this.classList.toggle('click-photo');
     navbar.userEvent();
 });
+
+class Aside {
+    constructor(aside) {
+        this.aside = aside;
+    }
+
+    minAside() {
+        this.aside.classList.toggle('min');
+    }
+
+}
+document.querySelector('#asideMenu').addEventListener('click', _ => new Aside(document.querySelector('aside')).minAside());

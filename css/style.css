@@ -57,7 +57,6 @@ header .head {
     color: var(--light-tc);
     padding: 8px;
     border-radius: 6px;
-    transition: .3s ease;
     width: 40px;
     height: 40px;
     display: flex;
@@ -105,6 +104,13 @@ header .title {
     font-size: 20px;
     height: fit-content;
     margin-right: 35px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+header .title img {
+    width: 28px;
 }
 
 header .search-container {
@@ -159,7 +165,6 @@ header #notfications-menu {
     text-align: left;
     padding: 12px 16px;
     border-bottom: 1px solid var(--border-c);
-    transition: .3s ease;
     cursor: pointer;
 }
 
@@ -187,44 +192,17 @@ header #notfications-menu {
     font-weight: 500;
 }
 
+.notice user {
+    color: var(--green);
+    font-weight: 500;
+}
+
 .notice .time {
     display: block !important;
     text-align: left;
     color: var(--green);
     font-weight: 500;
     margin-top: 10px;
-}
-
-header nav .choose {
-    display: flex;
-    flex-wrap: wrap;
-    width: 40px;
-    height: 40px;
-    gap: 1px;
-    justify-content: center;
-    align-content: center;
-    cursor: pointer;
-    padding: 8px;
-    transition: .3s ease;
-    border-radius: 6px;
-}
-
-header nav .choose span {
-    width: 9px;
-    height: 9px;
-    display: block;
-    background: var(--light-tc);
-    border-radius: 3px;
-    transition: .3s ease;
-
-}
-
-header nav .choose:hover > span {
-    background: var(--dark-tc);
-}
-
-header nav .choose:hover {
-    background: var(--hover-c);
 }
 
 header #apps-menu {
@@ -249,11 +227,11 @@ header .apps {
 header .app {
     padding: 10px;
     border-radius: 8px;
-    transition: .3s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
 }
 
 header .app span {
@@ -262,12 +240,9 @@ header .app span {
     font-weight: 500;
 }
 
-header .app i {
-    font-size: 25px;
-}
-
-header .app i:hover {
-    color: var(--light-tc) !important;
+header .app svg {
+    width: 25px;
+    color: var(--light-tc);
 }
 
 header .app:hover {
@@ -343,7 +318,13 @@ aside {
     padding: 15px 10px !important;
 }
 
-aside > ul:first-of-type {
+aside .main-height {
+    max-height: 472px;
+    position: relative;
+    overflow: auto;
+}
+
+aside .main-height > ul:first-of-type {
     border-bottom: 1px solid var(--border-c);
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -379,7 +360,6 @@ aside .notices-number {
 
 aside svg {
     width: 25px;
-    transition: .3s ease;
     color: var(--light-tc);
 }
 
@@ -394,15 +374,64 @@ aside .bottom ul {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    padding: 20px;
+    padding: 10px;
     width: 100%;
     background: #fff;
+}
+
+aside .bottom li {
+    cursor: pointer;
+    position: relative;
+}
+
+aside .bottom li:nth-child(2):before {
+    content: 'Settings Page';
+    position: absolute;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--dark-tc);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    width: 82px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .2s ease;
+    opacity: 0;
+}
+
+aside .bottom li:nth-child(2):after {
+    content: '';
+    position: absolute;
+    border-width: 6px;
+    border-color: var(--dark-tc) transparent transparent;
+    border-style: solid;
+    top: -5px;
+    left: 12px;
+    transition: .2s ease;
+    opacity: 0;
+}
+
+aside .bottom li:nth-child(2):hover::before,
+aside .bottom li:nth-child(2):hover::after {
+    opacity: 1;
 }
 
 aside .bottom svg {
     width: 20px;
     border-radius: 50%;
-    cursor: pointer;
+}
+
+/* Minmize Aside */
+.min {
+    width: fit-content;
+}
+
+.min .bottom,
+.min ul li span,
+.min .notices-number {
+    display: none;
 }
 
 /* End Asid */
