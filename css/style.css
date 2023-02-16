@@ -9,6 +9,7 @@ body {
 :root {
     --light-tc: #6B7280;
     --dark-tc: #111827;
+    --t-c: #374151;
     --border-c: rgb(229,231,235);
     --hover-c: #f3f4f6;
     --green: #0b93a2;
@@ -25,12 +26,37 @@ ul {
     list-style-type: none;
 }
 
+a {
+    color: var(--t-c);
+    text-decoration: none;
+}
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+
+/* Start Components */
+
+.menu-visible {
+    display: block !important;
+}
+
+header .head {
+    padding: 8px 16px;
+    background: #f9fafb;
+    font-size: 18px;
+    color: var(--dark-tc);
+    font-weight: 400;
+}
+
+/* End Components */
 
 /* Start Header */
 
 header {
     border-bottom: 1px solid var(--border-c);
+    position: relative;
 }
 
 header nav {
@@ -40,27 +66,41 @@ header nav {
     padding: 12px 0;
 }
 
-header i {
+header i:not(.search-container i) {
     font-size: 20px;
     cursor: pointer;
     color: var(--light-tc);
+    padding: 8px;
+    border-radius: 6px;
+    transition: .3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header i:hover:not(.search-container i) {
+    background: var(--hover-c);
+    color: var(--dark-tc);
 }
 
 header nav > div {
     display: flex;
     align-items: center;
-    gap: 30px;
 }
 
 header #asideMenu {
     font-size: 24px;
-    padding: 8px;
+    display: block;
+    margin-right: 24px;
 }
 
 header .title {
     font-weight: 900;
     font-size: 20px;
     height: fit-content;
+    margin-right: 35px;
 }
 
 header .search-container {
@@ -71,15 +111,16 @@ header .search {
     display: flex;
     align-items: center;
     height: fit-content;
-    border: 2px solid var(--border-c);
+    border: 1px solid var(--border-c);
     border-radius: 5px;
     padding: 10px 30px;
     width: 380px;
     outline: none;
+    background: var(--hover-c);
 }
 
 header .search:focus {
-    border-color: var(--green);
+    border: 2px solid var(--green);
 }
 
 header .search-container i {
@@ -89,14 +130,23 @@ header .search-container i {
     color: var(--light-tc);
     transform: translateY(-50%);
     font-size: 16px;
+    padding: 0;
+}
+
+header #notfications-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 50px;
 }
 
 header nav .choose {
     display: flex;
     flex-wrap: wrap;
-    width: 25px;
+    width: 19px;
     gap: 1px;
-    align-content: flex-start;
+    justify-content: center;
+    align-content: center;
     cursor: pointer;
 }
 
@@ -106,16 +156,109 @@ header nav .choose span {
     display: block;
     background: var(--light-tc);
     border-radius: 3px;
+    transition: .3s ease;
+}
+
+header nav .choose:hover > span {
+    background: var(--dark-tc);
+}
+
+header #apps-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 350px;
+    right: 20px;
+    border: 1px solid var(--border-c);
+    background: #fff;
+    border-radius: 8px;
+}
+
+
+header .apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+    padding: 16px;
+}
+
+header .app {
+    padding: 10px;
+    border-radius: 8px;
+    transition: .3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .app span {
+    color: var(--light-tc);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+header .app i {
+    font-size: 25px;
+}
+
+header .app i:hover {
+    color: var(--light-tc) !important;
+}
+
+header .app:hover {
+    background: var(--hover-c);
+}
+
+header .profile {
+    margin-left: 10px;
 }
 
 header .profile ul {
     display: none;
+    position: absolute;
+    right: 15px;
+    bottom: -190px;
+    border-radius: 8px;
+    border: 1px solid var(--border-c);
+    padding: 0 0 4px;
+    text-align: left;
+    background: #fff;
+    font-size: 14px;
+    width: 160px;
+}
+
+header .profile ul .user-email {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--border-c);
+    color: var(--t-c);
+
+}
+
+header .profile h5 {
+    font-size: 16px;
+}
+
+header .profile ul li {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+header .profile li:hover {
+    background: var(--hover-c);
 }
 
 header nav img {
-    width: 32px;
+    width: 40px;
     border-radius: 50%;
     cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.click-photo {
+    border: 3px solid #d1d5db;
 }
 
 /* End Header */

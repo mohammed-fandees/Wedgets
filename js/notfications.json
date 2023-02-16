@@ -1,0 +1,37 @@
+[
+    {
+        "NT": "message",
+        "userName": "Bonnie Green",
+        "content": "Hey, what's up? All set for the presentations?",
+        "time": "a few moments ago"
+    },
+    {
+        "NT": "follow",
+        "userName": "Mohammed Jumah",
+        "content": "started following you.",
+        "others": "5 others",
+        "time": "10 minutes ago"
+    },
+    {
+        "NT": "react",
+        "userName": "Joseph Mcfall",
+        "content": "love your story. See it and view more stories.",
+        "others": "141 others",
+        "time": "44 minutes ago"
+    },
+    {
+        "NT": "mention",
+        "userName": "Leslie Livingsotn",
+        "f-content": "mentioned you in a comment:",
+        "user": "@bonnie.green",
+        "l-content": "what do you say?",
+        "time": "1 hour ago"
+    },
+    {
+        "NT": "post",
+        "userName": "Robert Brown",
+        "content": "posted a new video: Glassmorphism - learn how to emplement the new design trend.",
+        "time": "3 hours ago"
+    }
+    
+]
