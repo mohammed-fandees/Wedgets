@@ -76,7 +76,9 @@ header .head {
 
 header {
     border-bottom: 1px solid var(--border-c);
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 header nav {
